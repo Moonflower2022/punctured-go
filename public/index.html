@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="k2bqhSSG0-uE0coqJyBIqPu8KjVE66pkNpMi5ZJblBk" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Go</title>
+    <script src="wgo/wgo.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+    
+  </head>
+  <body>
+    <!--
+    <div class="column-container">
+      For players:
+      <button class="button-8" role="button" id="pass">Pass</button>
+    </div>
+    -->
+    <div class="column-container">
+      <button class="button-8" role="button" id="sign-in">Sign in with google</button>
+
+      <font style="font-size: 30px; margin: 20px" id="gameStatus"></font>
+    </div>
+    
+    <div id="board"></div>
+    <div class="column-container">
+      Board Size:
+      <div id="boardSize-value">19</div>
+      <input type="range" min="5" max="19" step="1" value="19" disabled="true" id="boardSize">
+      Empty Square Size:
+      <div id="deathSquareSize-value">16</div>
+      <input type="range" min="1" max="15" step="1" value="3" disabled="true" id="deathSquareSize">
+      <button class="button-8" role="button" id="start">Start</button>
+      <button class="button-8" role="button" id="stop">Stop</button>
+      <button class="button-8" role="button" id="undo">Undo</button>
+    </div>
+    <script src="logic.js" type="module"></script>
+  </body>
+</html>
