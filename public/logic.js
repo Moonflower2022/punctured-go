@@ -38,8 +38,8 @@ if (isAdmin){
         .then((snapshot) => {
             if (snapshot.val() === true) {
                 console.log(document.getElementById("deathSquareSize"))
-                document.getElementById("deathSquareSize").removeAttribute('disabled')
-                document.getElementById("boardSize").removeAttribute('disabled')
+                document.getElementById("deathSquareSize").disabled = false
+                document.getElementById("boardSize").disabled = false
 
                 document.getElementById("gameStatus").innerHTML = "Game paused."
             } else {
@@ -48,13 +48,13 @@ if (isAdmin){
         });
     onValue(gameOverRef, (snapshot) => {
         if (snapshot.val() === true){
-            document.getElementById("deathSquareSize").removeAttribute('disabled')
-            document.getElementById("boardSize").removeAttribute('disabled')
+            document.getElementById("deathSquareSize").disabled = false
+            document.getElementById("boardSize").disabled = false
 
             document.getElementById("gameStatus").innerHTML = "Game paused."
         } else {
-            document.getElementById("deathSquareSize").setAttribute('disabled', 'true')
-            document.getElementById("boardSize").setAttribute('disabled', 'true')
+            document.getElementById("deathSquareSize").disabled = true
+            document.getElementById("boardSize").disabled = true
 
             document.getElementById("gameStatus").innerHTML = "Game in progress."
         }
