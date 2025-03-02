@@ -33,7 +33,7 @@ document.getElementById("boardSize").value = boardSize.toString()
 document.getElementById("deathSquareSize-value").innerHTML = gameDeathSquareSize.toString()
 document.getElementById("boardSize-value").innerHTML = boardSize.toString()
 
-if (isAdmin){
+if (isAdmin || true){
     get(gameOverRef)
         .then((snapshot) => {
             if (snapshot.val() === true) {
