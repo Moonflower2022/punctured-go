@@ -83,8 +83,7 @@ var board = new WGo.Board(document.getElementById("board"), {
         bottom: -0.5,
     }
 });
-
-var color = isAdmin ? WGo.B : WGo.W
+let color
 
 var deadArea = {
     // draw on grid layer
@@ -204,6 +203,9 @@ board.addEventListener("click", function (x, y) {
     if (localStorage.getItem("gameOver") === "true"){
         return;
     } 
+    
+    color = parseInt(localStorage.getItem("moveNumber")) % 2 === 0 ? WGo.B : WGo.W
+
     var result = game.play(x, y, color, false);
     
     if (typeof result != 'number') {
